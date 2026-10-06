@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXUS CAM V2</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div><h1>NEXUS CAM <span>V2</span></h1><small>VISION • PAN/TILT • REMOTE CONTROL</small></div>
+<div id="status" class="pill">OFFLINE</div></header>
+<main>
+<section class="videoCard"><video id="video" autoplay playsinline muted></video><div id="overlay"></div>
+<div class="videoBar"><span id="aiStatus">AI: READY</span><span id="targetStatus">TARGET: NONE</span></div></section>
+<section class="panel">
+<h2>AI COMMAND</h2><div class="row"><input id="target" placeholder="Example: red cup"><button id="lock">LOCK</button><button id="unlock">UNLOCK</button></div>
+<p class="hint">Say “lock onto [object]” or type a benign object/marker. The system will announce its state.</p>
+<h2>PAN / TILT</h2>
+<div class="pad"><button data-cmd="up">▲</button><div><button data-cmd="left">◀</button><button data-cmd="stop">■</button><button data-cmd="right">▶</button></div><button data-cmd="down">▼</button></div>
+<label>Speed <input id="speed" type="range" min="1" max="10" value="5"><b id="speedVal">5</b></label>
+<div class="row"><button id="camera">START CAMERA</button><button id="voice">VOICE ON</button></div>
+<h2>NANO ESP32</h2><div class="row"><input id="nano" placeholder="Nano IP (e.g. 192.168.1.50)"><button id="connect">CONNECT</button></div>
+<div id="nanoState" class="small">Not connected</div>
+<button id="estop" class="danger">EMERGENCY STOP</button>
+</section>
+</main>
+<footer>NEXUS CAM V2 • PC webcam is the vision source. Nano ESP32 handles motion.</footer>
+<script src="app.js"></script></body></html>
